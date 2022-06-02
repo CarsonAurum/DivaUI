@@ -1,6 +1,5 @@
-public struct DivaUI {
-    public private(set) var text = "Hello, World!"
+//
+//  Created by Carson Rau on 3/30/22.
+//
 
-    public init() {
-    }
-}
+@_exported import DivaGrid
