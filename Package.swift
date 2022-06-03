@@ -4,6 +4,10 @@ import PackageDescription
 
 let package = Package(
     name: "DivaUI",
+    platforms: [
+        .iOS(.v13),
+        .macOS(.v10_15)
+    ],
     products: [
         .library(
             name: "DivaUI",
@@ -13,11 +17,7 @@ let package = Package(
         .package(url: "https://github.com/CarsonAurum/DivaLibrary.git", branch: "master")
     ],
     targets: [
-        .target(
-            name: "DivaUI",
-            dependencies: []),
-        .testTarget(
-            name: "DivaUITests",
-            dependencies: ["DivaUI"]),
+        .target(name: "DivaUI", dependencies: ["DivaGrid", "DivaLibrary"]),
+        .target(name: "DivaGrid", dependencies: ["DivaLibrary"])
     ]
 )
